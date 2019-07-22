@@ -1,5 +1,6 @@
 package com.wisdomrider.backgroundservice;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
@@ -18,7 +19,7 @@ public class Application extends android.app.Application {
 
     private void createChannel() {
         if (SDK_INT >= O) {
-            NotificationChannel c = new NotificationChannel(CHANNEL_ID, getString(R.string.app_name), NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel c = new NotificationChannel(CHANNEL_ID, getString(R.string.app_name), NotificationManager.IMPORTANCE_LOW);
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(c);
         }
